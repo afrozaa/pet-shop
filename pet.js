@@ -59,8 +59,8 @@ const displaypets = (pets) => {
     petContainer.addEventListener('click', (event) => {
         if (event.target.closest('.like-btn')) {
             const button = event.target.closest('.like-btn');
-            button.classList.toggle('#0e7a81');
-            button.classList.toggle('text-white');
+            //button.classList.toggle('#0e7a81');
+            button.classList.toggle('text-[#0e7a81]');
         }
 
         if (event.target.closest('.show-details')) {
@@ -92,5 +92,3 @@ const displayCategories = (categories) => {
 // Load initial data
 loadCategories();
 loadpets();
-
-
