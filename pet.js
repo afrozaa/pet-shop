@@ -5,7 +5,6 @@ const loadCategories = () => {
         .then((data) => displayCategories(data.categories))
         .catch((error) => {
             console.error(error);
-            alert("Failed to load categories.");
         });
 };
 
@@ -16,65 +15,12 @@ const loadpets = () => {
         .then((data) => displaypets(data.pets))
         .catch((error) => {
             console.error(error);
-            alert("Failed to load pets.");
         });
 };
 
-// Load Category Pets
-const loadCategoryPets = (categoryName) => {
-    fetch(`https://openapi.programming-hero.com/api/peddy/category/${categoryName}`)
-        .then((res) => res.json())
-        .then((data) => {
-            removeActiveClass();
-            const activeBtn = document.getElementById(`btn-${categoryName}`);
-            activeBtn.classList.add("active");
-            displayVideos(data.category);
-        })
-        .catch((error) => {
-            console.error(error);
-            alert("Failed to load category pets.");
-        });
-};
 
-// Load Pet Details
-const loadDetails = async (petId) => {
-    console.log(petId);  
-    const uri = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
-    try {
-        const res = await fetch(uri);
-        const data = await res.json();
-        displayDetails(data.pet);
-    } catch (error) {
-        console.error(error);
-        alert("Failed to load pet details.");
-    }
-};
 
-// Display Pet Details in Modal
-const displayDetails = (pet) => {
-    console.log(pet);
-    const detailContainer = document.getElementById("modal-content");
 
-    // Escape pet_details to prevent XSS
-    const escapedDetails = pet.pet_details.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-    detailContainer.innerHTML = `
-        <img src="${pet.image}" alt="Pet Image" />
-        <p>${escapedDetails}</p>
-    `;
-
-    // Show the modal dialog
-    const customModal = document.getElementById("customModal");
-    customModal.showModal();
-    customModal.querySelector('.modal-box button').focus();
-
-    // Close the modal on Escape key
-    customModal.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            customModal.close();
-        }
-    });
-};
 
 // Display Pets
 const displaypets = (pets) => {
@@ -95,7 +41,7 @@ const displaypets = (pets) => {
                 <div class="divider"></div>
             </div>
             <div class="w-full px-5 pb-5 flex justify-between items-center">
-                <button class="btn bg-white border-1 font-bold border-[#0e7a81] h-[16px] w-[85px] like-btn">
+                <button class="btn bg-white border-1 font-bold bg-#0e7a81 border-[#0e7a81] h-[16px] w-[85px] like-btn">
                     <i class="fa-regular fa-thumbs-up"></i>
                 </button>
                 <button class="btn bg-white border-1 font-bold text-[#0e7a81] border-[#0e7a81] h-[16px] w-[85px]">
@@ -113,7 +59,7 @@ const displaypets = (pets) => {
     petContainer.addEventListener('click', (event) => {
         if (event.target.closest('.like-btn')) {
             const button = event.target.closest('.like-btn');
-            button.classList.toggle('bg-red-500');
+            button.classList.toggle('#0e7a81');
             button.classList.toggle('text-white');
         }
 
