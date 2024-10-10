@@ -37,7 +37,7 @@ const displaypets = (pets) => {
                 <p class="flex">Breed: ${pet.breed}</p>
                 <p class="flex">Birth: ${pet.date_of_birth}</p>
                 <p class="flex">Gender: ${pet.gender}</p>
-                <p class="flex">Color: ${pet.color}</p>
+                <p class="flex">Price: ${pet.price}</p>
                 <div class="divider"></div>
             </div>
             <div class="w-full px-5 pb-5 flex justify-between items-center">
