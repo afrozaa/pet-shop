@@ -41,7 +41,7 @@ const displaypets = (pets) => {
                 <div class="divider"></div>
             </div>
             <div class="w-full px-5 pb-5 flex justify-between items-center">
-                <button class="btn bg-white border-1 font-bold bg-#0e7a81 border-[#0e7a81] h-[16px] w-[85px] like-btn">
+                <button class="btn bg-white border-1 font-bold text-[#0e7a81] border-[#0e7a81] h-[16px] w-[85px] like-btn">
                     <i class="fa-regular fa-thumbs-up"></i>
                 </button>
                 <button class="btn bg-white border-1 font-bold text-[#0e7a81] border-[#0e7a81] h-[16px] w-[85px]">
@@ -92,3 +92,5 @@ const displayCategories = (categories) => {
 // Load initial data
 loadCategories();
 loadpets();
+
+
