@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
+    <header class="w-11/12 mx-auto">
         <nav class="w-11/12 mx-auto">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
@@ -51,8 +51,8 @@
                     <p class="py-6">
                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at <br>its layout. The point of using Lorem Ipsum is that it has a.
                     </p>
-                    <button style="background-color: #0e7a81;" class="text-white py-2 px-4 rounded-lg font-inter">
-                        View More
+                    <button style="background-color: #0e7a81;" class="btn text-white py-2 px-4 rounded-lg font-inter">
+                       <a href="#">View More</a> 
                     </button>
                 </div>
             </div>
@@ -62,58 +62,56 @@
         </div>
 
         <!-- Categories Section -->
-        <section class="">
-            <h2 class="text-4xl font-bold text-center mb-8">Categories</h2>
-            <nav id="categories" class="grid lg:grid-cols-4 gap-x-10 sm:grid-cols-1 gap-y-5 justify-center ">
+        <section class="w-11/12 mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-6">Adopt  Your  Best Friend</h2>
+            <p class="text-center mb-8">It is a long established fact that a reader will be distracted by the readable content of a<br> page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            <nav id="categories" class="flex flex-col justify-between md:flex-row gap-y-4 sm:flex-row gap-y-4">
                 <!-- Categories will be dynamically inserted here -->
             </nav>
         </section>
+        
+        
+        
 
         <!-- Best Deal For you Section -->
-        <section class="flex py-6">
-          <div class="flex-col border-1 border-red">
+        <section class="w-11/12 mx-auto flex py-6">
+          <div class="flex-col ">
             <h2 class="text-4xl font-bold align-left mb-8">Best Deal For you</h2>
             <div id="pets" class="grid lg:grid-cols-3 gap-4 sm:grid-cols-1">
                 <!-- Pet cards will be dynamically inserted here -->
             </div>
           </div>
             <!-- Sort by Price Section -->
-            <div class="flex-col border-1 border-red top-0 right-0">
-            <button style="background-color: #0e7a81;" class="btn border-transparent w-11/12 font-bold text-white py-2 px-4 rounded-lg font-inter">
-                Sort by Price
-            </button>
-            <div id="pets" class="grid lg:grid-cols-2 gap-4 sm:grid-cols-1">
-                <!-- Pet cards will be dynamically inserted here -->
-            </div>
+            <div class="flex-col space-x-5 space-y-6 ">
+                <div class="text-right">
+                    <button style="background-color: #0e7a81;" class="btn border-transparent font-bold text-white py-2 px-4 rounded-lg font-inter">
+                        Sort by Price
+                    </button>
+                </div>                
+            <div id="liked-pets" class="">
+                <div >
+                    <div class="card bg-base-100 shadow-xl">
+                        <div class="card-body h-[2623px] w-[600px] mx-auto border-2 rounded-xl">
+                          
+                          
+                          </div>
+                        </div>
+                      </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <button id="details" class="btn" style="display: none;" onclick="customModal.showModal()">
-    Open Modal
-    </button>
-    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
-    <div class="modal-box">
-        <div id="modal-content">
-            <!-- Dynamic content will be injected here -->
-        </div>
-        <div class="modal-action">
-            <form method="dialog">
-                <button class="btn">Close</button>
-            </form>
-        </div>
-    </div>
-    </dialog>
 
 
 
-    <footer class="footer bg-black text-neutral-content p-10 font-base-200">
-        <div class="w-11/12 mx-auto py-10 flex justify-between">
-            <nav class="flex">
+    <footer class="footer bg-black text-neutral-content p-20 font-base-200 ">
+        <div class="w-11/12 mx-auto flex justify-between gap-y-5 lg:flex md: flex-row sm: flex-row">
+            <nav class="flex lg:flex-col md:flex-row sm:flex-col">
                 <div class="flex flex-col">
                     <div class="flex flex-row gap-2 py-3">
                         <img class="h-5 w-5" src="assets/logo.webp" alt="Logo">
-                        <div class="font-bold">Peddy</div>
+                        <div class="font-bold text-2xl">Peddy</div>
                     </div>
                     <a href="#" class="">Location: av. Washington 165, NY CA 54003</a>
                     <a href="#" class="">Phone: +31 85 964 47 25</a>
@@ -127,24 +125,31 @@
                     </div>
                 </div>
             </nav>
-            <nav class="flex flex-col">
-                <h6 class="font-bold">Useful Links</h6>
+            
+            <nav class="flex lg:flex-col md:flex-row sm:flex-col">
+                <div class="flex flex-col gap-2 py-3">
+                <h6 class="font-bold text-xl">Useful Links</h6>
                 <a href="#" class="link link-hover">About us</a>
                 <a href="#" class="link link-hover">Contact</a>
                 <a href="#" class="link link-hover">Jobs</a>
                 <a href="#" class="link link-hover">Press kit</a>
+                </div>
             </nav>
-            <nav class="flex flex-col gap-3">
-                <h6 class="font-bold">Drop a message</h6>
-                <label class="w-11/12 input input-bordered input-ghost flex items-center gap-2">
-                    <input type="text" class="" placeholder="Enter your email" />
-                </label>
-                <button style="background-color: #0e7a81;" class="btn border-transparent w-11/12 font-bold text-white py-2 px-4 rounded-lg font-inter">
-                    Subscribe
-                </button>
+            
+            <nav class="gap-3 flex lg:flex-col md:flex-row sm:flex-col">
+                <div class="flex flex-col gap-2 py-3">
+                    <h6 class="font-bold text-xl">Drop a message</h6>
+                    <label class="w-11/12 input input-bordered input-ghost flex items-center gap-2">
+                        <input type="text" class="input border-none" placeholder="Enter your email" />
+                    </label>
+                    <button style="background-color: #0e7a81;" class="btn border-none border-transparent w-11/12 font-bold text-white py-2 px-4 rounded-lg font-inter">
+                        Subscribe
+                    </button>
+                </div>
             </nav>
         </div>
     </footer>
+    
 
     <script src="pet.js"></script> <!-- Link to your JS file -->
 </body>
