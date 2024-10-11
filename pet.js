@@ -20,8 +20,6 @@ const loadpets = () => {
 
 
 
-
-
 // Display Pets
 const displaypets = (pets) => {
     const petContainer = document.getElementById("pets");
@@ -52,7 +50,7 @@ const displaypets = (pets) => {
                 </button>
             </div>
         `;
-        petContainer.appendChild(card);
+        petContainer.append(card);
     });
 
     // Add like button toggle functionality
@@ -70,15 +68,17 @@ const displaypets = (pets) => {
     });
 };
 
+
+
 // Display Categories
 const displayCategories = (categories) => {
     const categoryContainer = document.getElementById("categories");
     categories.forEach((item) => {
         const button = document.createElement("button");
-        button.classList = "btn bg-white border-1 border-[#0e7a81] h-[65px] w-[400px]";
+        button.classList = "btn bg-white border-1 border-[#0e7a81] h-[65px] w-[260px]";
         button.id = `btn-${item.category}`; // Set ID for active class toggle
         button.innerHTML = `
-            <div class="flex rounded-lg">
+            <div class="flex rounded-lg gap-2">
                 <figure class="justify-center">
                     <img src="${item.category_icon}" class="h-[40px]" alt="${item.category}" />
                 </figure>
